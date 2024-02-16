@@ -1,0 +1,33 @@
+﻿<UserControl
+    x:Class="EmployeeAtestation.Controls.LabeledTextBox"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:EmployeeAtestation.Controls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <StackPanel VerticalAlignment="Center">
+        <TextBlock
+            x:Name="label"
+            Padding="5"
+            FontSize="15"
+            Foreground="White"
+            Text="{Binding Label, RelativeSource={RelativeSource AncestorType={x:Type local:LabeledTextBox}}}" />
+        <Border
+            Padding="10,3"
+            Background="{StaticResource Brush2}"
+            BorderBrush="{StaticResource Brush1}"
+            BorderThickness="3"
+            CornerRadius="20" Height="40">
+
+            <TextBox
+                x:Name="textBox"
+                Background="{StaticResource Brush2}"
+                BorderThickness="0"
+                FontSize="20"
+                Foreground="White" 
+                Text="{Binding Text, RelativeSource={RelativeSource AncestorType={x:Type local:LabeledTextBox}}, UpdateSourceTrigger=PropertyChanged}"/>
+
+        </Border>
+    </StackPanel>
+</UserControl>

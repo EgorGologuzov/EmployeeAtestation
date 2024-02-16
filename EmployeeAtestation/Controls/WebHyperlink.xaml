@@ -1,0 +1,15 @@
+﻿<UserControl
+    x:Class="EmployeeAtestation.Controls.WebHyperlink"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:EmployeeAtestation.Controls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <TextBlock
+        MouseUp="Link_Click"
+        Style="{StaticResource Hyperlink1}"
+        Text="{Binding Text, RelativeSource={RelativeSource AncestorType={x:Type local:WebHyperlink}}}" />
+</UserControl>

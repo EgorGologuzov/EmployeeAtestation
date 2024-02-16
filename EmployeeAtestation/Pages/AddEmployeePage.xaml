@@ -1,0 +1,62 @@
+﻿<Page
+    x:Class="EmployeeAtestation.Pages.AddEmployeePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:EmployeeAtestation.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:EmployeeAtestation.Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    Title="AdminPage"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <Page.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <controls:Header Grid.Row="0" Text="ДОБАВИТЬ СОТРУДНИКА" />
+            <StackPanel
+                Grid.Row="1"
+                MaxWidth="400"
+                VerticalAlignment="Center">
+                <controls:LabeledTextBox Label="Имя" Text="{Binding Firstname}" />
+                <controls:LabeledTextBox Label="Фамилия" Text="{Binding Lastname}" />
+                <controls:LabeledComboBox
+                    x:Name="stationComboBox"
+                    ItemsSource="{Binding Stations, Mode=OneWay}"
+                    Label="Станция на кухне"
+                    SelectedItem="{Binding Station}" />
+                <controls:RegularButton
+                    Margin="0,20,0,0"
+                    Command="{Binding Add}"
+                    IsEnabled="{Binding CanAdd}"
+                    Text="ДОБАВИТЬ" />
+
+                <StackPanel Visibility="{Binding SaveSecretsPanelVisibility}">
+                    <TextBlock
+                        Style="{StaticResource Text1}"
+                        TextWrapping="Wrap"
+                        Margin="5, 10"
+                        HorizontalAlignment="Center"
+                        TextAlignment="Center">
+                        <Run Text="Сотрудник создан. Его учетные данные:"/>
+                        <LineBreak/>
+                        <Run Text="{Binding Secrets}"/>
+                    </TextBlock>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <controls:RegularButton Grid.Column="0" Text="Сохранить" Command="{Binding SaveSecrets}"/>
+                        <controls:RegularButton Grid.Column="1" Text="Копировать" Command="{Binding CopySecrets}"/>
+                    </Grid>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </Page.Content>
+</Page>

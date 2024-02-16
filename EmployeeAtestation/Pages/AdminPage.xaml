@@ -1,0 +1,27 @@
+﻿<Page
+    x:Class="EmployeeAtestation.Pages.AdminPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:EmployeeAtestation.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:EmployeeAtestation.Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="AdminPage"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <Page.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <controls:Header Grid.Row="0" Text="АДМИНИСТРАТОР" BackButtonVisibility="Collapsed"/>
+            <StackPanel Grid.Row="1" MaxWidth="400" VerticalAlignment="Center">
+                <controls:RegularButton Text="ДОБАВИТЬ СОТРУДНИКА" Margin="0, 0, 0, 20" Click="AddEmployee_Click"/>
+                <controls:RegularButton Text="РЕЗУЛЬТАТЫ" Click="Results_Click"/>
+            </StackPanel>
+        </Grid>
+    </Page.Content>
+</Page>
