@@ -44,16 +44,19 @@
                             <TextBlock
                                 Grid.Column="1"
                                 Style="{StaticResource Text1}"
-                                Text="{Binding StartTime, StringFormat='{}{0:dd.MM.yyyy  hh:mm:ss}'}" />
+                                Text="{Binding StartTime, StringFormat='{}начат {0:dd.MM.yyyy HH:mm:ss}'}"
+                                Visibility="{Binding TimesVisibility}"/>
                             <TextBlock
                                 Grid.Column="2"
                                 HorizontalAlignment="Center"
                                 Style="{StaticResource Text1}"
-                                Text=" - " />
+                                Text=", " 
+                                Visibility="{Binding TimesVisibility}"/>
                             <TextBlock
                                 Grid.Column="3"
                                 Style="{StaticResource Text1}"
-                                Text="{Binding EndTime, StringFormat='{}{0:dd.MM.yyyy  hh:mm:ss}'}" />
+                                Text="{Binding Time, StringFormat='{}время {0:hh\\:mm\\:ss}', Mode=OneWay}" 
+                                Visibility="{Binding TimesVisibility}"/>
                             <TextBlock
                                 Grid.Column="4"
                                 HorizontalAlignment="Right"
@@ -67,6 +70,8 @@
             <TextBlock Margin="0,10,0,0" Style="{StaticResource Header2}">
                 <Run Text="Итог: " />
                 <Run Text="{Binding TotalResult, StringFormat='{}{0}%'}" />
+                <Run Text=", "/>
+                <Run Text="{Binding TotalTime, StringFormat='{}{0:hh\\:mm\\:ss}'}"/>
             </TextBlock>
         </StackPanel>
     </Border>

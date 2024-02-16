@@ -29,7 +29,7 @@
         <Style x:Key="Hyperlink1" TargetType="TextBlock">
             <Setter Property="Foreground" Value="Blue" />
             <Setter Property="FontSize" Value="15" />
-            <Setter Property="TextDecorations" Value="Underline"/>
+            <Setter Property="TextDecorations" Value="Underline" />
         </Style>
 
         <Style x:Key="DatePicker1" TargetType="{x:Type DatePicker}">
@@ -42,55 +42,55 @@
                                 <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
                             <Button
-                         x:Name="PART_Button"
-                         Grid.Column="1"
-                         HorizontalAlignment="Left"
-                         VerticalAlignment="Stretch"
-                         Background="{StaticResource Brush3}"
-                         Focusable="False"
-                         Foreground="White">
+                                x:Name="PART_Button"
+                                Grid.Column="1"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Stretch"
+                                Background="{StaticResource Brush3}"
+                                Focusable="False"
+                                Foreground="White">
                                 <TextBlock Margin="5,0" Text="КА" />
                             </Button>
                             <DatePickerTextBox
-                         x:Name="PART_TextBox"
-                         Grid.Column="0"
-                         HorizontalContentAlignment="Stretch"
-                         VerticalContentAlignment="Center"
-                         Background="{StaticResource Brush2}"
-                         Focusable="{TemplateBinding Focusable}"
-                         Foreground="White"/>
+                                x:Name="PART_TextBox"
+                                Grid.Column="0"
+                                HorizontalContentAlignment="Stretch"
+                                VerticalContentAlignment="Center"
+                                Background="{StaticResource Brush2}"
+                                Focusable="{TemplateBinding Focusable}"
+                                Foreground="White" />
                             <Grid
-                         x:Name="PART_DisabledVisual"
-                         Grid.Row="0"
-                         Grid.Column="0"
-                         Grid.ColumnSpan="2"
-                         IsHitTestVisible="False"
-                         Opacity="0">
+                                x:Name="PART_DisabledVisual"
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Grid.ColumnSpan="2"
+                                IsHitTestVisible="False"
+                                Opacity="0">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*" />
                                     <ColumnDefinition Width="Auto" />
                                 </Grid.ColumnDefinitions>
                                 <Rectangle
-                             Grid.Row="0"
-                             Grid.Column="0"
-                             Fill="#A5FFFFFF"
-                             RadiusX="1"
-                             RadiusY="1" />
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    Fill="#A5FFFFFF"
+                                    RadiusX="1"
+                                    RadiusY="1" />
                                 <Rectangle
-                             Grid.Row="0"
-                             Grid.Column="1"
-                             Width="19"
-                             Height="18"
-                             Margin="3,0,3,0"
-                             Fill="#A5FFFFFF"
-                             RadiusX="1"
-                             RadiusY="1" />
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    Width="19"
+                                    Height="18"
+                                    Margin="3,0,3,0"
+                                    Fill="#A5FFFFFF"
+                                    RadiusX="1"
+                                    RadiusY="1" />
                                 <Popup
-                             x:Name="PART_Popup"
-                             AllowsTransparency="True"
-                             Placement="Bottom"
-                             PlacementTarget="{Binding ElementName=PART_TextBox}"
-                             StaysOpen="False" />
+                                    x:Name="PART_Popup"
+                                    AllowsTransparency="True"
+                                    Placement="Bottom"
+                                    PlacementTarget="{Binding ElementName=PART_TextBox}"
+                                    StaysOpen="False" />
                             </Grid>
                         </Grid>
                     </ControlTemplate>

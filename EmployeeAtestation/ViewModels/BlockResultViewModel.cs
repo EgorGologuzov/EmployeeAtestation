@@ -1,4 +1,5 @@
 ﻿using EmployeeAtestation.Models;
+using System.Windows;
 
 namespace EmployeeAtestation.ViewModels
 {
@@ -32,6 +33,23 @@ namespace EmployeeAtestation.ViewModels
         {
             get => Model.Result;
             set { Model.Result = value; OnPropertyChanged(nameof(Result)); }
+        }
+
+        public Visibility TimesVisibility => StartTime is null || StartTime == default(DateTime) ? Visibility.Collapsed : Visibility.Visible;
+
+        public TimeSpan? Time
+        {
+            get
+            {
+                try
+                {
+                    return EndTime - StartTime;
+                }
+                catch
+                {
+                    return null;
+                }
+            }
         }
 
         public BlockResultViewModel(BlockResult model) : base(model)
