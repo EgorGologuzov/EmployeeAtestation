@@ -1,4 +1,5 @@
-﻿using Google.Apis.Auth.OAuth2;
+﻿using EmployeeAtestation.Utils;
+using Google.Apis.Auth.OAuth2;
 using Google.Apis.Drive.v3;
 using Google.Apis.Services;
 using System.IO;
@@ -11,7 +12,7 @@ namespace EmployeeAtestation.Data
         public static DriveService Service { get; set; }
         public static bool IsInitialized => Service is not null;
 
-        public static async Task Initialize(string secrets)
+        public static async Task Initialize(string secrets, string storedData)
         {
             using var stream = new MemoryStream(Encoding.UTF8.GetBytes(secrets));
 
@@ -21,15 +22,16 @@ namespace EmployeeAtestation.Data
             var credentials = await GoogleWebAuthorizationBroker.AuthorizeAsync(
                     clientSecrets: clientSecrets,
                     scopes: scopes,
-                    user: "sushimanyat.tests@gmail.com",
-                    taskCancellationToken: CancellationToken.None
+                    user: DriveConfig.AccountEmail,
+                    taskCancellationToken: CancellationToken.None,
+                    dataStore: new InternalDataStore(storedData)
                 );
 
             Service = new DriveService(
                     new BaseClientService.Initializer()
                     {
                         HttpClientInitializer = credentials,
-                        ApplicationName = "SushiManyait.EmployeeAtestation"
+                        ApplicationName = DriveConfig.ApplicationName
                     }
                 );
         }
