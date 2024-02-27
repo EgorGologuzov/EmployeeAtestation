@@ -17,9 +17,8 @@ namespace EmployeeAtestation.Utils
             throw new NotImplementedException();
         }
 
-        public Task DeleteAsync<T>(string key)
+        public async Task DeleteAsync<T>(string key)
         {
-            throw new NotImplementedException();
         }
 
         public async Task<T> GetAsync<T>(string key)

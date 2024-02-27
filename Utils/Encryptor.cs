@@ -1,8 +1,7 @@
-﻿using System.IO;
-using System.Security.Cryptography;
+﻿using System.Security.Cryptography;
 using System.Text;
 
-namespace EmployeeAtestation.Utils
+namespace Utils
 {
     public static class Encryptor
     {

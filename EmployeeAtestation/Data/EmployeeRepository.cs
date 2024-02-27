@@ -29,8 +29,16 @@ namespace EmployeeAtestation.Data
         public static async Task<Employee> Create(Employee employee)
         {
             var files = await Drive.GetAllFiles(DriveConfig.EmployeesFolder);
-            int max = files.Select(f => Convert.ToInt32(f.Name.Split("-").First())).Max();
-            employee.Code = (max + 1).ToString("000000");
+
+            if (files is null || files.Count == 0)
+            {
+                employee.Code = 1.ToString("000000");
+            }
+            else
+            {
+                int max = files.Select(f => Convert.ToInt32(f.Name.Split("-").First())).Max();
+                employee.Code = (max + 1).ToString("000000");
+            }
 
             await Drive.CreateFile($"{employee.Code}-{employee.PasswordHash}.json", DriveConfig.EmployeesFolder, employee.ToJson());
 

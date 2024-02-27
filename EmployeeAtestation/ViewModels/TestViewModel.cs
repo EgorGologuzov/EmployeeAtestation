@@ -93,14 +93,15 @@ namespace EmployeeAtestation.ViewModels
 
             for (int i = 1; i < Blocks.Count; i++)
             {
+                var block = Blocks[i];
+                previous.NextBlock = block;
+
                 if (previous.Result < previous.Model.PassingScore)
                 {
                     break;
                 }
 
-                var block = Blocks[i];
                 block.IsEnabled = true;
-                previous.NextBlock = block;
                 previous = block;
             }
         }

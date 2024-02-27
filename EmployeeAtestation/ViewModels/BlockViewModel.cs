@@ -118,7 +118,7 @@ namespace EmployeeAtestation.ViewModels
         public ICommand EndTest { get; set; }
         public ICommand ToEmployeePage { get; set; }
         public ICommand MoveToNextBlock { get; set; }
-        public ICommand Shutdown { get; set; }
+        public ICommand RestartBlock { get; set; }
 
         public BlockViewModel(Block model) : base(model)
         {
@@ -130,7 +130,7 @@ namespace EmployeeAtestation.ViewModels
             StartTest = new StartTest(this);
             EndTest = new EndTest(this);
             ToEmployeePage = new PopToEmployeePage();
-            Shutdown = new ExitApplication();
+            RestartBlock = new RestartBlock(this);
             MoveToNextBlock = new MoveToNextBlock(this);
             RefreshResult();
         }

@@ -62,5 +62,15 @@ namespace EmployeeAtestation.ViewModels
                 Variants[i].Prefix = $"{i + 1})";
             }
         }
+
+        public void ResetAnswers()
+        {
+            foreach (var variant in Variants)
+            {
+                variant.IsSelected = false;
+            }
+
+            Model.EmployeeAnswers.Clear();
+        }
     }
 }

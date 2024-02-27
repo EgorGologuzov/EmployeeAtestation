@@ -23,7 +23,7 @@ namespace EmployeeAtestation.Commands
             Block.ResultVisibility = System.Windows.Visibility.Visible;
             Block.RefreshResult();
 
-            if (Block.Result < Block.Model.PassingScore || Block.HasNextBlock == false)
+            if (!Block.HasNextBlock && Block.Result >= Block.Model.PassingScore)
             {
                 Block.OnTestingCompleted();
             }

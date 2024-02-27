@@ -67,14 +67,14 @@
                     <StackPanel Visibility="{Binding FailedButtonVisibility}">
                         <TextBlock
                             Style="{StaticResource Text1}"
-                            Text="Вы набрали слишком низкий балл. Тестирование окончено - результат не удовлетворительный."
+                            Text="Вы набрали слишком низкий балл. Изучите материал еще раз и попробуйте снова."
                             TextAlignment="Center"
                             TextWrapping="Wrap" />
                         <controls:RegularButton
                             Width="300"
                             Margin="0,10,0,0"
-                            Command="{Binding Shutdown}"
-                            Text="Выйти из приложения" />
+                            Command="{Binding RestartBlock}"
+                            Text="На главную" />
                     </StackPanel>
 
                 </StackPanel>
