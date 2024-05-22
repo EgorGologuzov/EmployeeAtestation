@@ -30,4 +30,8 @@
     <PackageReference Include="Google.Apis.Drive.v3" Version="1.66.0.3309" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Tests\" />
+  </ItemGroup>
+
 </Project>

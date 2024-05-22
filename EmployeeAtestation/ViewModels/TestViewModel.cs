@@ -117,7 +117,7 @@ namespace EmployeeAtestation.ViewModels
                     Number = block.Number,
                     StartTime = block.StartTime,
                     EndTime = block.EndTime,
-                    Result = block.Result,
+                    Result = Math.Round(block.Result, 2),
                     Title = block.Title
                 };
 
@@ -125,7 +125,12 @@ namespace EmployeeAtestation.ViewModels
 
                 foreach (var question in block.Questions)
                 {
-                    blockResult.Answers.Add(question.Number, question.Model.EmployeeAnswers);
+                    blockResult.Answers.Add(new QuestionResult
+                    {
+                        Number = question.Number,
+                        Answers = question.Model.EmployeeAnswers,
+                        IsCorrect = question.IsAnswerCorrect
+                    });
                 }
             }
 

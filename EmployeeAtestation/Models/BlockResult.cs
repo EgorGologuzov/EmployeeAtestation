@@ -6,7 +6,7 @@
         public string Title { get; set; }
         public DateTime? StartTime { get; set; }
         public DateTime? EndTime { get; set; }
-        public Dictionary<int, IList<string>> Answers { get; set; } = new();
+        public List<QuestionResult> Answers { get; set; } = new();
         public double Result { get; set; }
     }
 }

@@ -69,18 +69,31 @@ namespace EmployeeAtestation.Views
                 return;
             }
 
-            if (ViewModel.Type == QuestionType.One)
+            switch (ViewModel.Type)
             {
-                ViewModel.Model.EmployeeAnswers.Clear();
-                ViewModel.Model.EmployeeAnswers.Add(item.Text);
+                case QuestionType.One:
 
-                foreach (var variant in ViewModel.Variants)
-                {
-                    if (!variant.Equals(sender))
+                    ViewModel.Model.EmployeeAnswers.Clear();
+                    ViewModel.Model.EmployeeAnswers.Add(item.Text);
+
+                    foreach (var variant in ViewModel.Variants)
                     {
-                        variant.IsSelected = false;
+                        if (!variant.Equals(sender))
+                        {
+                            variant.IsSelected = false;
+                        }
                     }
-                }
+
+                    break;
+
+                case QuestionType.Any:
+
+                    if (ViewModel.Model.EmployeeAnswers.Contains(item.Text) == false)
+                    {
+                        ViewModel.Model.EmployeeAnswers.Add(item.Text);
+                    }
+
+                    break;
             }
         }
     }
