@@ -10,14 +10,13 @@ namespace Utils
     internal static class StoredDataUpdateUtil
     {
         public static DriveService Service;
-        const string _secrets = null;
         const string _fileDataStorePath = "C:\\Users\\Egor\\Desktop\\datastore";
         const string _accountEmail = "sushimanyat.tests@gmail.com";
         const string _applicationName = "SushiManyait.EmployeeAtestation";
 
-        public static async Task<string> UpdateStoredData()
+        public static async Task<string> UpdateStoredData(string secrets)
         {
-            using var stream = new MemoryStream(Encoding.UTF8.GetBytes(_secrets));
+            using var stream = new MemoryStream(Encoding.UTF8.GetBytes(secrets));
 
             var clientSecrets = GoogleClientSecrets.FromStream(stream).Secrets;
             var scopes = new string[] { DriveService.Scope.Drive };
