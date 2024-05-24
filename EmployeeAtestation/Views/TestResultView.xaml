@@ -69,7 +69,7 @@
 
             <TextBlock Margin="0,10,0,0" Style="{StaticResource Header2}">
                 <Run Text="Итог: " />
-                <Run Text="{Binding TotalResult, StringFormat='{}{0}%'}" />
+                <Run Text="{Binding TotalResult, StringFormat='{}{0:F0}%'}" />
                 <Run Text=", "/>
                 <Run Text="{Binding TotalTime, StringFormat='{}{0:hh\\:mm\\:ss}'}"/>
             </TextBlock>

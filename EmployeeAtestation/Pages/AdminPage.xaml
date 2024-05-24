@@ -13,14 +13,20 @@
     <Page.Content>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <controls:Header Grid.Row="0" Text="АДМИНИСТРАТОР" BackButtonVisibility="Collapsed"/>
-            <StackPanel Grid.Row="1" MaxWidth="400" VerticalAlignment="Center">
-                <controls:RegularButton Text="ДОБАВИТЬ СОТРУДНИКА" Margin="0, 0, 0, 20" Click="AddEmployee_Click"/>
-                <controls:RegularButton Text="РЕЗУЛЬТАТЫ" Click="Results_Click"/>
+            <controls:Header Grid.Row="0" Text="АДМИНИСТРАТОР" />
+            <StackPanel
+                Grid.Row="1"
+                MaxWidth="400"
+                VerticalAlignment="Center">
+                <controls:RegularButton
+                    Margin="0,0,0,20"
+                    Click="AddEmployee_Click"
+                    Text="ДОБАВИТЬ СОТРУДНИКА" />
+                <controls:RegularButton Click="Results_Click" Text="РЕЗУЛЬТАТЫ" />
             </StackPanel>
         </Grid>
     </Page.Content>

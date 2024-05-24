@@ -17,7 +17,7 @@
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <controls:Header Grid.Row="0" Text="{Binding FullName, StringFormat='ДОБРЫЙ ДЕНЬ, {0}', Mode=OneWay}" BackButtonVisibility="Collapsed"/>
+            <controls:Header Grid.Row="0" Text="{Binding FullName, StringFormat='ДОБРЫЙ ДЕНЬ, {0}', Mode=OneWay}" />
             <Frame
                 x:Name="contentFrame"
                 Grid.Row="1"
